@@ -10,7 +10,7 @@ namespace InventoryManagementSystem.DAL
 {
     public class Calculations
     {
-        
+        /*
         public static IDictionary<Ingredient, int> IngredientsUsedForWeek()
         {
             InventoryContext db = new InventoryContext();
@@ -22,6 +22,7 @@ namespace InventoryManagementSystem.DAL
             }
             return _ingredientsUsed;
         }
+        */
         
         //This overload is using a dummy parameter that doesn't get used.
         //We needed an IngredientsUsed... to be used in the view, so it needed
@@ -48,7 +49,7 @@ namespace InventoryManagementSystem.DAL
             }
             return ingredientsUsed;
         }
-
+        /*
         public static IList<double> WeeklyProfit(IDictionary<Ingredient, int> _ingredientsUsed)
         {
             double WeekCost = CostofWeeklyIngredients(_ingredientsUsed);
@@ -113,7 +114,7 @@ namespace InventoryManagementSystem.DAL
         }
 
         // --- End RS Additions 9/1/2017 ---
-    */
+    
 
         private static double WeeklyIncome()
         {
@@ -126,5 +127,6 @@ namespace InventoryManagementSystem.DAL
             }
             return Income;
         }
+        */
     }
 }

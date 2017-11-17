@@ -31,6 +31,10 @@
 	width: 100%;
 	height: 80px;
 	border-radius: 5px;
+	color: white;
+	font-size: 4em;
+	text-align: right;
+	padding-top: 25px;
 
 }
 .buttonCluster {

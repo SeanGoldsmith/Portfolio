@@ -15,35 +15,52 @@
 		<h1 class="title">Caclulator</h1>
 
 		<div class="frame">
-			<label class="numberLabel"></label>
+			<label id="view" class="numberLabel"></label>
 			<br><br>
 			<div class="buttonCluster">
-				<input class="indButton" type="button" value="7"/>
-				<input class="indButton" type="button" value="8"/>
-				<input class="indButton" type="button" value="9"/>
-				<input class="indButton" type="button" value="+"/>
+				<input class="indButton" type="button" value="7" 
+				onclick="updateNumber(7)" />
+				<input class="indButton" type="button" value="8"
+				onclick="updateNumber(8)"/>
+				<input class="indButton" type="button" value="9"
+				onclick="updateNumber(9)"/>
+				<input class="indButton" type="button" value="+"
+				onclick="add()"/>
 			</div>
 			<div class="buttonCluster">
-				<input class="indButton" type="button" value="4"/>
-				<input class="indButton" type="button" value="5"/>
-				<input class="indButton" type="button" value="6"/>
-				<input class="indButton" type="button" value="-"/>
+				<input class="indButton" type="button" value="4"
+				onclick="updateNumber(4)"/>
+				<input class="indButton" type="button" value="5"
+				onclick="updateNumber(5)"/>
+				<input class="indButton" type="button" value="6"
+				onclick="updateNumber(6)"/>
+				<input class="indButton" type="button" value="-"
+				onclick="subtract()"/>
 			</div>
 			<div class="buttonCluster">
-				<input class="indButton" type="button" value="1"/>
-				<input class="indButton" type="button" value="2"/>
-				<input class="indButton" type="button" value="3"/>
-				<input class="indButton" type="button" value="*"/>
+				<input class="indButton" type="button" value="1"
+				onclick="updateNumber(1)"/>
+				<input class="indButton" type="button" value="2"
+				onclick="updateNumber(2)"/>
+				<input class="indButton" type="button" value="3"
+				onclick="updateNumber(3)"/>
+				<input class="indButton" type="button" value="*"
+				onclick="multi()"/>
 			</div>
 			<div class="buttonCluster">
-				<input class="indButton" type="button" value="="/>
-				<input class="indButton disabled" type="button" value="="/>
-				<input class="indButton disabled" type="button" value="="/>
-				<input class="indButton" type="button" value="/"/>
+				<input class="indButton" type="button" value="0"
+				onclick="updateNumber(0)"/>
+				<input class="indButton" type="button" value="="
+				onclick="printTotal()"/>
+				<input class="indButton" type="button" value="Clear"
+				onclick="clearAll()"/>
+				<input class="indButton" type="button" value="/"
+				onclick="divide()"/>
 			</div>
 
 
 		</div>
 	</div>
-
+<script type="text/javascript" src="./js/script.js">
+</script>
 </body>

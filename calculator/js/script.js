@@ -1,120 +1,152 @@
-currentTotal = 0;
-nextNumberOption = 0; //case 0 means first number. case 1 is addition. 
-// case two is subtraction
-// case three is multiplication
-// case 4 is division
+var view = document.getElementById("view");
+currentOperation = 0;
+holdNumber = 0;
 isFirstNumber = true;
-holdValue = 0;
+currentNumberString = "";
 
-function updateNumber(someNumber) {
-		var view = document.getElementById("view");
-		currentState = view.innerHTML;
-		view.innerHTML = currentState + someNumber.toString();
+function updateNumber(someNumber) 
+{
+	currentNumberString += someNumber.toString();
+	var currentState = view.innerHTML;
+	view.innerHTML = currentState + someNumber.toString();
 }
 
-function add () {
-	var view = document.getElementById("view");
-	viewNumber = parseInt(view.innerHTML)
-	if (isFirstNumber) 
+function add() 
+{
+	currentState = view.innerHTML;
+	console.log(currentNumberString);
+	if (isFirstNumber)
 	{
-		holdValue = viewNumber;
-		nextNumberOption = 1;
+		holdNumber = parseInt(view.innerHTML);
+		currentOperation = 1;
+		view.innerHTML = currentState + " + ";
+		currentNumberString = "";
 		isFirstNumber = false;
 	}
-	else if (!isFirstNumber)
+	else 
 	{
-		holdValue = calcNewHoldNumber();
+		holdNumber = calcValue();
+		currentOperation = 1;
+		console.log(holdNumber);
+		currentNumberString = "";
+		view.innerHTML = holdNumber.toString() + " + ";
 	}
-	view.innerHTML = "";
+
 }
 
-function subtract () {
-	var view = document.getElementById("view");
-	viewNumber = parseInt(view.innerHTML)
-	if (isFirstNumber) 
+function subtract() 
+{
+	currentState = view.innerHTML;
+	console.log(currentNumberString);
+	if (isFirstNumber)
 	{
-		holdValue = viewNumber;
-		nextNumberOption = 2;
+		holdNumber = parseInt(view.innerHTML);
+		currentOperation = 2;
+		view.innerHTML = currentState + " - ";
+		currentNumberString = "";
 		isFirstNumber = false;
 	}
-	else if (!isFirstNumber)
+	else 
 	{
-		holdValue = calcNewHoldNumber();
+		holdNumber = calcValue();
+		currentOperation = 2;
+		console.log(holdNumber);
+		currentNumberString = "";
+		view.innerHTML = holdNumber.toString() + " - ";
 	}
-	view.innerHTML = "";
-}
 
-function multi () {
-	var view = document.getElementById("view");
-	viewNumber = parseInt(view.innerHTML)
-	if (isFirstNumber) 
+}
+function multi() 
+{
+	currentState = view.innerHTML;
+	console.log(currentNumberString);
+	if (isFirstNumber)
 	{
-		holdValue = viewNumber;
-		nextNumberOption = 3;
+		holdNumber = parseInt(view.innerHTML);
+		currentOperation = 3;
+		view.innerHTML = currentState + " * ";
+		currentNumberString = "";
 		isFirstNumber = false;
 	}
-	else if (!isFirstNumber)
+	else 
 	{
-		holdValue = calcNewHoldNumber();
+		holdNumber = calcValue();
+		currentOperation = 3;
+		console.log(holdNumber);
+		currentNumberString = "";
+		view.innerHTML = holdNumber.toString() + " * ";
 	}
-	view.innerHTML = "";
 
 }
-
-function divide () {
-	var view = document.getElementById("view");
-	viewNumber = parseInt(view.innerHTML)
-	if (isFirstNumber) 
+function divide() 
+{
+	currentState = view.innerHTML;
+	console.log(currentNumberString);
+	if (isFirstNumber)
 	{
-		holdValue = viewNumber;
-		nextNumberOption = 4;
+		holdNumber = parseInt(view.innerHTML);
+		currentOperation = 4;
+		view.innerHTML = currentState + " / ";
+		currentNumberString = "";
 		isFirstNumber = false;
 	}
-	else if (!isFirstNumber)
+	else 
 	{
-		holdValue = calcNewHoldNumber();
+		holdNumber = calcValue();
+		currentOperation = 4;
+		console.log(holdNumber);
+		currentNumberString = "";
+		view.innerHTML = holdNumber.toString() + " / ";
 	}
-	view.innerHTML = "";
+
+}
+function runEquals () {
+	total = calcValue();
+	view.innerHTML = total;
 }
 
-function runEquals() {
-	holdValue = calcNewHoldNumber();
-	view.innerHTML = holdValue;
+
+function calcValue ()
+{
+	if (currentOperation == 0)
+	{
+		return;
+	}
+	else if (currentOperation == 1)
+	{
+		console.log(currentNumberString);
+		total = parseInt(holdNumber) + parseInt(currentNumberString);
+		console.log(total);
+		return total;
+	}
+	else if (currentOperation == 2)
+	{
+		console.log(currentNumberString);
+		total = parseInt(holdNumber) - parseInt(currentNumberString);
+		console.log(total);
+		return total;
+	}
+	else if (currentOperation == 3)
+	{
+		console.log(currentNumberString);
+		total = parseInt(holdNumber) * parseInt(currentNumberString);
+		console.log(total);
+		return total;
+	}
+	else if (currentOperation == 4)
+	{
+		console.log(currentNumberString);
+		total = parseInt(holdNumber) / parseInt(currentNumberString);
+		console.log(total);
+		return total;
+	}
+}
+
+function clearAll ()
+{
+	currentNumberString = "";
 	isFirstNumber = true;
-}
-
-function clearAll() {
-	holdValue = 0;
-	nextNumberOption = 0;
-	isFirstNumber = true;
-	var view = document.getElementById("view");
+	holdNumber = 0;
+	currentOperation = 0;
 	view.innerHTML = "";
-}
-
-function calcNewHoldNumber() {
-	console.log(nextNumberOption);
-	if (nextNumberOption == 1)
-	{
-		var view = document.getElementById("view");
-		holdValue = holdValue + parseInt(view.innerHTML);
-		return holdValue;
-	}
-	else if (nextNumberOption == 2)
-	{
-		var view = document.getElementById("view");
-		holdValue = holdValue - parseInt(view.innerHTML);
-		return holdValue;
-	}
-	else if (nextNumberOption == 3)
-	{
-		var view = document.getElementById("view");
-		holdValue = holdValue * parseInt(view.innerHTML);
-		return holdValue;
-	}
-	else if (nextNumberOption == 4)
-	{
-		var view = document.getElementById("view");
-		holdValue = holdValue / parseInt(view.innerHTML);
-		return holdValue;
-	}
 }

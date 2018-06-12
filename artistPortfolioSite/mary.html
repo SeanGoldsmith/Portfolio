@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Mary Skidmore</title>
+  <meta name="description" content="">
+  <meta name="author" content="SitePoint">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+  </style>
+  <link rel="stylesheet" href="css/style.css?v=1.7">
+
+
+</head>
+
+<body onresize="onResize()" onload="initializePage()">
+		<div id="carousel-wrapper" class="carousel-wrapper hidden">
+  			<div id="carousel-holder">
+  				<div id="slide-holder1" class="slide-holder">
+  				
+  				</div>
+  			 	 <img class="next-button" src="./img/rightArrow.png" onclick=	"nextImg()"/>
+          		<img class="back-button" src="./img/leftArrow.png" onclick="backImg()"/>
+          		<img class="close-button" src="./img/closeButton.png" onclick="removeCarousel()">
+  			</div>
+  		</div>
+
+		
+		<div class="head">
+			<p class="nameText">
+				Mary Skidmore
+			</p>
+			<a href="about.html">
+				<p class="secondary first">
+					About
+				</p>
+			</a>
+			<a href="contact.php">
+				<p class="secondary second">
+					Contact
+				</p>
+			</a>
+		</div>
+		
+
+		<div class="img-container">
+			<div id="imgBox1" class="img-box" onclick="animateIn('photo')">
+				<img id="slot1" class="img" src="./img/photo/portrait/kennyWeb/kenny3.jpg"/>
+				<div id="textSlot1" class="overlay">Photography</div>
+			</div>
+			<div id="imgBox2" class="img-box" onclick="animateIn('digital')">
+				<img id="slot2" class="img" src="./img/digital/cartoon/aron.jpg"/>
+				<div id="textSlot2" class="overlay">Digital Art</div>
+			</div>
+			<div id="imgBox3" class="img-box" onclick="animateIn('traditional')">
+				<img id="slot3" class="img" src="./img/traditional/ink/ink4.jpg"/>
+				<div id="textSlot3" class="overlay">Traditional</div>
+			</div>
+		</div>
+
+    <button onclick="animateIn('home')" id="menu-button">Back</button>
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>

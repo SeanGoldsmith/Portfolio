@@ -2,7 +2,7 @@
 A Portfolio of my work.
 
 Inventory Management System: 
-  The files in this folder I files I worked on during my time with Prosper IT Consulting.  In the calculation.cs file, I have commented     out all code that I did not write, but was done by the time I came onto the project.  The update.cshtml is a view that I created.
+  The files in this folder are files I worked on during my time with Prosper IT Consulting.  In the calculation.cs file, I have commented     out all code that I did not write, but was done by the time I came onto the project.  The update.cshtml is a view that I created.
  
 Calulator:
   This is a simple calculator I created in javascript.  This was an exercise in logic and javascript.
